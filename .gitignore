@@ -2,3 +2,4 @@
 tests/
 *.exe
 *.class
+.DS_Store
