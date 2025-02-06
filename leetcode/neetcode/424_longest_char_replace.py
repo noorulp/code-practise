@@ -3,15 +3,6 @@ class Solution:
         counts = dict()
         l = 0
         maxf = 0
-        for i, char in enumerate(s):
-            counts[char] = 1 + counts.get(char, 0)
-            maxf = max(counts[char], maxf)
-            
-            lenSub = i - l + 1
-            while lenSub - counts[char] > k:
-                
-
-
 
 
 if __name__ == '__main__':
