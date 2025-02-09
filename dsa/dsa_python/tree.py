@@ -31,6 +31,19 @@ def createTree() -> TreeNode:
     sx.rchild = sv
     return root
 
+def createTreeFromArray(arr: list) -> TreeNode:
+    n = len(arr)
+    def create(index: int):
+        if index >= n:
+            return None
+        node = TreeNode(arr[index])
+        node.lchild = create(2 * index + 1)
+        node.rchild = create(2 * index + 2)
+        return node
+    root = create(0)
+    return root
+
+
 def printLeafNodes(root: TreeNode) -> None:
 
     res =[]
@@ -87,4 +100,7 @@ if __name__ == '__main__':
     root = createTree()
     print(dfs(root, 7))
     print(bfs(root, 10))
+    arr = [0,1,2,3,4,5,6,7,8]
+    root2 = createTreeFromArray(arr)
+    inorderTraversal(root2)
     
