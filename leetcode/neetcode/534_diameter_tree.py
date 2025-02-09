@@ -3,7 +3,7 @@ from collections import deque
 
 class Solution:
     
-    def diameterOfBinaryTree2(self, root: TreeNode)-> int:
+    def diameterOfBinaryTree(self, root: TreeNode)-> int:
         maxcount = 0
         def maxlevel(node: TreeNode, level: int) -> int:
             nonlocal maxcount
