@@ -3,3 +3,4 @@ tests/
 *.exe
 *.class
 .DS_Store
+*/__pycache__
