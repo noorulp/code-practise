@@ -36,6 +36,8 @@ def createTreeFromArray(arr: list) -> TreeNode:
     def create(index: int):
         if index >= n:
             return None
+        if arr[index] is None:
+            return None
         node = TreeNode(arr[index])
         node.left = create(2 * index + 1)
         node.right = create(2 * index + 2)
@@ -109,7 +111,10 @@ def printTree(root: TreeNode) -> None:
         if l != level:
             print(f'level {level}:', end= ' ')
             for val in plist:
-                print(val, end= ' ')
+                if val is None:
+                    print('x', end= ' ')
+                else:
+                    print(val, end= ' ')
             level = l
             print()
             plist.clear()
