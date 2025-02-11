@@ -23,6 +23,17 @@ def createTreeFromArray(arr: list) -> TreeNode:
     root = create(0)
     return root
 
+def search(root: TreeNode, k: int) -> TreeNode:
+    if root is None:
+        return None
+    if root.val == k:
+        return root
+    l = search(root.left, k)
+    if l:
+        return l
+    r = search(root.right, k)
+    return r
+
 def printTree(root: TreeNode) -> None:
     '''
     prints a tree to make it easier to see its changes
