@@ -34,6 +34,20 @@ def search(root: TreeNode, k: int) -> TreeNode:
     r = search(root.right, k)
     return r
 
+def inorder(root: TreeNode) -> None:
+    if root is None:
+        return
+    inorder(root.left)
+    print(root.val, end= ' ')
+    inorder(root.right)
+
+def preorder(root: TreeNode) -> None:
+    if root is None:
+        return
+    print(root.val, end= ' ')
+    preorder(root.left)
+    preorder(root.right)
+
 def printTree(root: TreeNode) -> None:
     '''
     prints a tree to make it easier to see its changes
